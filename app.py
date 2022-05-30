@@ -12,11 +12,13 @@ app=Flask(__name__)
 
 #add configuration
 
-
+password=""
+schema=""
+secret_key=""
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:002@localhost/guvi' #guvi is database has to be created earlier
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:"+password+"@localhost/"+schema #guvi is database has to be created earlier
 
-app.config['SECRET_KEY'] = 'ishwarya@0110'
+app.config['SECRET_KEY'] = secret_key
 
 db = SQLAlchemy(app)
 jwt=JWTManager(app)
